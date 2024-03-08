@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const workoutRoutes = require('./routes/workouts')
 const userRoutes = require('./routes/user')
 const corsOptions = require('./config/corsOptions.js')
+const cors = require('cors')
 
 // express app
 const app = express()
