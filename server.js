@@ -4,6 +4,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const workoutRoutes = require('./routes/workouts')
 const userRoutes = require('./routes/user')
+import corsOptions from './config/corsOptions'
 
 // express app
 const app = express()
@@ -15,6 +16,7 @@ app.use((req, res, next) => {
   console.log(req.path, req.method)
   next()
 })
+app.use(cors(corsOptions))
 
 // routes
 app.use('/api/workouts', workoutRoutes)
